@@ -424,7 +424,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
     private void backspace() {
         String text = txtDisplay.getText();
         if (text.length() > 0 && !"0".equals(text) && !"Error".equals(text)) {
-           text = text.substring(0, text.length() - 1);
+            text = text.substring(0, text.length() - 1);
             txtDisplay.setText(text.isEmpty() ? "0" : text);
         }
 
