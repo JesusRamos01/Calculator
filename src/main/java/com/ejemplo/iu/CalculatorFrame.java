@@ -16,6 +16,7 @@ public class CalculatorFrame extends javax.swing.JFrame {
     public CalculatorFrame() {
         initComponents();
         setLocationRelativeTo(null);
+        txtDisplay.setEditable(false);
     }
 
     /**
