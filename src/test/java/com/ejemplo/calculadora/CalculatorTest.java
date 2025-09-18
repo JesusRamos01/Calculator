@@ -1,9 +1,8 @@
 package com.ejemplo.calculadora;
 import com.ejemplo.core.CalculatorService;
-import org.junit.Test;
-import org.junit.platform.commons.annotation.Testable;
-
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 
@@ -36,8 +35,10 @@ public class CalculatorTest {
         assertEquals(-2.0, cs.dividir(-4.0, 2.0), 0.0001);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testDividirPorCero() {
-        cs.dividir(5.0, 0.0);
+        assertThrows(IllegalArgumentException.class, () -> {
+            cs.dividir(5.0, 0.0);
+        });
     }
 }
